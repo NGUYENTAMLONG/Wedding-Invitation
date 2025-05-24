@@ -1,10 +1,12 @@
+/* eslint-disable */
 /* eslint-disable @next/next/no-img-element */
+
 import React, { useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 
 const Pages = React.forwardRef<
   HTMLDivElement,
-  { imageSrc: string, number: any },
+  { imageSrc: string, number: any }
 >(({ imageSrc, number }, ref) => {
   return (
     <div ref={ref} className="demoPage w-full h-full overflow-hidden">
@@ -36,12 +38,13 @@ function FlipPhoto() {
     <div className="h-screen w-screen flex flex-col gap-5 justify-center items-center bg-gray-900 overflow-hidden">
       <h1 className="text-3xl text-white text-center font-bold">FlipPhoto</h1>
 
+      {/* @ts-ignore */}
       <HTMLFlipBook
         width={400}
         height={570}
         className={`cursor-pointer`}
         showCover={true}
-        onFlip={(e) => setCurrentPage(e.data)}
+        onFlip={(e:any) => setCurrentPage(e.data)}
       >
         {imagePages.map((src, idx) => (
           <Pages key={idx} imageSrc={src} number={idx + 1} />
