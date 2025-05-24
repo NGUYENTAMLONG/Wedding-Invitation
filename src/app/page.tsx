@@ -18,9 +18,9 @@ export default function Home() {
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   });
-  
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -30,12 +30,12 @@ export default function Home() {
 
     // Thêm countdown timer
     const weddingDate = '2025-05-30T09:00:00'; // Ngày cưới: 30/05/2025 lúc 9h sáng
-    
+
     const timer = setInterval(() => {
       const now = new Date();
       const wedding = new Date(weddingDate);
       const diff = wedding.getTime() - now.getTime();
-      
+
       if (diff <= 0) {
         clearInterval(timer);
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -44,11 +44,11 @@ export default function Home() {
           days: Math.floor(diff / (1000 * 60 * 60 * 24)),
           hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
           minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((diff % (1000 * 60)) / 1000)
+          seconds: Math.floor((diff % (1000 * 60)) / 1000),
         });
       }
     }, 1000);
-    
+
     return () => clearInterval(timer);
   }, []);
 
@@ -137,7 +137,11 @@ export default function Home() {
           <div className="bride-quotes py-20 px-20">
             <Image src={symbol} alt="bride" className="" />
             <p className="bride-quotes-text text-xl">
-            Anh đến như ánh nắng sớm mai, nhẹ nhàng sưởi ấm trái tim em những ngày tưởng chừng lạc lối. Cảm ơn anh vì đã kiên nhẫn, chở che và luôn bên em bằng tất cả chân thành. Em tin rằng hành trình phía trước, dù thăng trầm thế nào, mình vẫn sẽ cùng bước – với ánh nhìn yêu thương và vòng tay luôn dành cho nhau.
+              Anh đến như ánh nắng sớm mai, nhẹ nhàng sưởi ấm trái tim em những
+              ngày tưởng chừng lạc lối. Cảm ơn anh vì đã kiên nhẫn, chở che và
+              luôn bên em bằng tất cả chân thành. Em tin rằng hành trình phía
+              trước, dù thăng trầm thế nào, mình vẫn sẽ cùng bước – với ánh nhìn
+              yêu thương và vòng tay luôn dành cho nhau.
             </p>
             <div className="flex-center">
               <div className="w-full border-t-4 border-red-500"></div>
@@ -160,35 +164,46 @@ export default function Home() {
       {/* Section countdown mới */}
       <div className="section-6 w-full py-16 bg-brown-primary">
         <div className="container">
-          <h2 className="text-4xl md:text-5xl text-center text-white mb-10" data-aos="fade-up">
+          <h2
+            className="text-4xl md:text-5xl text-center text-white mb-10"
+            data-aos="fade-up"
+          >
             Đếm ngược đến ngày trọng đại
           </h2>
-          
+
           <div className="flex justify-center items-center gap-4 md:gap-8">
             <div className="flex flex-col items-center">
               <div className="bg-white w-20 h-20 md:w-28 md:h-28 rounded-lg flex-center">
-                <span className="text-4xl md:text-6xl text-brown-primary">{timeLeft.days}</span>
+                <span className="text-4xl md:text-6xl text-brown-primary">
+                  {timeLeft.days}
+                </span>
               </div>
               <span className="text-white text-xl mt-2">Ngày</span>
             </div>
-            
+
             <div className="flex flex-col items-center">
               <div className="bg-white w-20 h-20 md:w-28 md:h-28 rounded-lg flex-center">
-                <span className="text-4xl md:text-6xl text-brown-primary">{timeLeft.hours}</span>
+                <span className="text-4xl md:text-6xl text-brown-primary">
+                  {timeLeft.hours}
+                </span>
               </div>
               <span className="text-white text-xl mt-2">Giờ</span>
             </div>
-            
+
             <div className="flex flex-col items-center">
               <div className="bg-white w-20 h-20 md:w-28 md:h-28 rounded-lg flex-center">
-                <span className="text-4xl md:text-6xl text-brown-primary">{timeLeft.minutes}</span>
+                <span className="text-4xl md:text-6xl text-brown-primary">
+                  {timeLeft.minutes}
+                </span>
               </div>
               <span className="text-white text-xl mt-2">Phút</span>
             </div>
-            
+
             <div className="flex flex-col items-center">
               <div className="bg-white w-20 h-20 md:w-28 md:h-28 rounded-lg flex-center">
-                <span className="text-4xl md:text-6xl text-brown-primary">{timeLeft.seconds}</span>
+                <span className="text-4xl md:text-6xl text-brown-primary">
+                  {timeLeft.seconds}
+                </span>
               </div>
               <span className="text-white text-xl mt-2">Giây</span>
             </div>
@@ -198,4 +213,3 @@ export default function Home() {
     </>
   );
 }
-
