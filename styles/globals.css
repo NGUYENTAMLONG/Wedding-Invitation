@@ -1,0 +1,73 @@
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Allura", cursive, !important;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  font-family: "Allura", cursive , !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Safari, iOS */
+  tap-highlight-color: transparent;
+  /* Android */
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  /* Safari, iOS */
+  tap-highlight-color: transparent;
+  /* Android */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-family: "Allura", cursive , !important;
+}
+
+option {
+  color: black;
+}
+
+.require .label_require::after {
+  content: '*';
+  color: #FF0606;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  width: none;
+}
