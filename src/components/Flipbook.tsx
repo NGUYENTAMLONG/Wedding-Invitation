@@ -13,7 +13,7 @@ const Pages = React.forwardRef<
       <img
         src={imageSrc}
         alt={`Page ${number}`}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover rounded-lg"
       />
     </div>
   );
@@ -36,8 +36,6 @@ function FlipPhoto() {
 
   return (
     <div className="h-screen w-screen flex flex-col gap-5 justify-center items-center bg-gray-900 overflow-hidden">
-      <h1 className="text-3xl text-white text-center font-bold">FlipPhoto</h1>
-
       {/* @ts-ignore */}
       <HTMLFlipBook
         width={400}
